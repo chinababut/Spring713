@@ -9,6 +9,14 @@
 		<property name="username" value="system" />
 		<property name="password" value="admin" />
 
+<!--     <property name="connectionProperties"> -->
+    
+<!--     <props> -->
+<!--     <prop key="username">system</prop> -->
+<!--     <prop key="password">admin</prop> -->
+<!--     </props> -->
+<!--    </property> -->
+
 	</bean>
 
 	<bean id="dao" class="com.nt.dao.EmpSalInsertDaoImpl">

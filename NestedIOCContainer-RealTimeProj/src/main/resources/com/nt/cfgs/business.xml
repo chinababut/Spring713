@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id ="hkrcp" class = "com.zaxxer.hikari.HikariDataSource">
+
+<property name="driverClassName" value ="oracle.jdbc.driver.OracleDriver"/>
+<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
+<property name="username" value="system"/>
+<property name="password" value ="admin"/>
+
+</bean>
+
+<bean id ="dao" class= "com.nt.dao.EmpManagedDaoImpl">
+<constructor-arg ref= "hkrcp"></constructor-arg>
+</bean>
+
+<bean id="ser" class="com.nt.service.EmpManagedServiceImpl">
+<constructor-arg ref= "dao"></constructor-arg>
+</bean>
+</beans>
